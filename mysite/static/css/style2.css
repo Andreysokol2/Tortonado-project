@@ -1,0 +1,66 @@
+body {
+      font: 20px 'Montserrat', sans-serif;
+      line-height: 1.8;
+      background-image:url("https://i.postimg.cc/W1b8jvDW/1.png");
+      padding: 0;
+        margin: 0;
+        padding-top: 80px;
+     /* background-repeat: repeat-y;*/
+
+ }
+ #basket_total_nub{
+    position: absolute;
+    font-size: 18px;
+    right: 0%;
+    top: 6px;
+ }
+   .social-icons li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+
+.fa {
+  color:#aca8a8;
+  width: 40px;
+  line-height: 40px;
+  text-decoration: none;
+}
+
+.fa:hover {
+  text-decoration: none;
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.fa-facebook:hover {color: #fff; background-color: #1A2F55;}
+.fa-twitter:hover {color: #32CCFE; background-color: #fff;}
+.fa-instagram:hover {color: #A1755C; background-color: #530855;}
+.fa-google-plus:hover {color: #CF3D2E; background-color: #fff;}
+.fa-youtube-play:hover {color: #C52F30; background-color: #fff;}
+.fa-pinterest:hover {color: #CC2127; background-color: #fff;}
+.fa-linkedin:hover {color: #0085AE; background-color: #fff;}
+footer p {
+  color: #fff;
+
+}
+footer a {
+  color: #0056AA;
+  }
+ footer a:hover {
+ color: #f4511e;
+ }
+  .glyphicon-chevron-up a:hover {
+color: #f4511e;
+  }
+.nav-link.active {
+  background-color: #cc8b8b !important;
+    border-color: #cc8b8b #cc8b8b #cc8b8b !important;
+   }
+   .nav-tabs {
+    border-bottom: 1px solid #cc8b8b;
+}

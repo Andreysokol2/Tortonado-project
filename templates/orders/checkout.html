@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3 class="text-center category-name" >Товары в корзине</h3>
+                    <ul>
+                    {% for product_in_basket in products_in_basket %}
+                        <li class="product-in-basket-item ">
+                            <div class="product-in-basket-img">
+                                <a href="{% url 'product' product_in_basket.product.id %}">
+                                <img class="img-fluid" src="{{ product_in_basket.product.main_image1.url }}">
+                                </a>
+                            </div>
+                            <div class="product-in-basket-name">
+                                <h4>{{ product_in_basket.product.name }}</h4>
+                            </div>
+                            <div class="product-in-basket-price">
+                                <h5>Итоговая цена:</h5>
+                                <b>{{ product_in_basket.total_price }}</b>.руб
+                            </div>
+                            <div class="product-in-basket-apps">
+                                <h4>Дополнения:</h4>
+                                <h4 style="white-space: pre-line;">
+                                {{ product_in_basket.apps }}
+                                </h4>
+                            </div>
+                            <div class="product-in-basket-decorations">
+                                <h5>Оформления:</h5>
+                                {{ product_in_basket.decorations }}
+                            </div>
+                            <div>
+                                <a href = "#" class="delete_item" action="{% url 'basket_adding' %}" data-product_id="{{ product_in_basket.id }}">{% csrf_token %}
+                                    x
+                                </a>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+                </div>
+            </div>
+        </div>
+{% endblock %}

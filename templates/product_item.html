@@ -1,0 +1,32 @@
+<div class="col-lg-3 col-sm-6 col-md-6  anim-show homeproduct-item">
+    <div class="product-item">
+<!--        <a href=" ">-->
+        <a href="{% url 'product' product_image.product.id %}">
+            <article class="item">
+                <div class="">
+                    <img src="{{ product_image.image.url }}" class="img-fluid product-img-item">
+                </div>
+            </article>
+        </a>
+        {% if product_image.product.discount %}
+        <div class="discount-container">
+            <span>{{product_image.product.discount}}%</span>
+        </div>
+        {% endif %}
+        <h4>{{ product_image.product.name }}</h4>
+
+        <p>{{ product_image.product.short_description }}</p>
+
+<!--        <div class="price text-center">-->
+<!--            {{ product_image.product.price }}.руб-->
+<!--        </div>-->
+        <div class="add-to-card-btn">
+            <a class="f revealator-rotateleft " href="{% url 'product' product_image.product.id %}">
+                <button class="btn btn-success">
+                    Подробнее
+                </button>
+            </a>
+        </div>
+    </div>
+
+</div>

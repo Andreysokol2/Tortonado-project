@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container" xmlns="http://www.w3.org/1999/html">
+    <div class="row product-item-row">
+        <div class="col-lg-6">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    {% for image in product.productimage_set.all %}
+                    <div class="carousel-item" id="product-image">
+                        <img src="{{ image.image.url}}" class="d-block w-100" alt="...">
+                    </div>
+                    {% endfor %}
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+                </a>
+                  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </a>
+            </div>
+            <div class="text-center product-price-one product-price">
+                                        <h4>Итоговая цена: </h4><h4 class="product_price">{{ product.price_per_kilogram }}.руб</h4>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <h1 class="text-center">
+                {{product.name}}
+            </h1>
+            <div>
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-link nav-description-item active" id="nav-home-tab" data-bs-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Описание</a>
+                        <a class="nav-link nav-description-item" id="nav-profile-tab" data-bs-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Состав</a>
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active product-description border-to-description" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"><p class="product-description">{{ product.description }}</p></div>
+                <div class="tab-pane fade product-description border-to-description" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"><p class="product-description">{{product.structure}}</p></div></div>
+            </div>
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            Дополнительный функции
+                        </button>
+                    </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body accordion-flush">
+                        <div class="main-dop-box">
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Дополнительный функции #1
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="form-check" >
+                                                <input class="form-check-input" type="checkbox" id="dop1">
+                                                <label class="form-check-label">Доп функция 1</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="dop2">
+                                                <label class="form-check-label">Доп функция 2</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="dop3">
+                                                <label class="form-check-label">Доп функция 3</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                Дополнительный функции #2
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="form-check">
+                                                <input class="form-check-input dop1" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                                <label class="form-check-label" for="exampleRadios1">
+                                                    Без дополнительного оформления
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input dop2" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                                                <label class="form-check-label" for="exampleRadios2">
+                                                    Оформление 1
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input dop3" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                                                <label class="form-check-label" for="exampleRadios3">
+                                                    Оформление 2
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="select-kilogram">
+                <select class="form-select" aria-label="Default select example">
+                    <option value="1" selected>1 кг</option>
+                    <option value="2">2 кг</option>
+                    <option value="3">3 кг</option>
+                </select>
+            </div>
+            <div class="text-center product-price-two product-price">
+                    <h4>Итоговая цена: </h4><h4 class="product_price">{{ product.price_per_kilogram }}.руб</h4>
+            </div>
+            <form id="form_buying_product" class="form-inline" action="{% url 'basket_adding' %}">{% csrf_token %}
+<!--              <div class="form-group">-->
+<!--                    <input type="number" class="form-control" id = "number">-->
+<!--                </div>-->
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success btn-buy btn-lg" id ="submit_btn" data-product_id = "{{ product.id }}" data-product_name = "{{product.name}}" data-price_per_kilogram = "{{product.price_per_kilogram}}">Добавить в корзину</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
