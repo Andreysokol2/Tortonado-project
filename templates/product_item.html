@@ -14,12 +14,10 @@
         </div>
         {% endif %}
         <h4>{{ product_image.product.name }}</h4>
-
         <p>{{ product_image.product.short_description }}</p>
-
-<!--        <div class="price text-center">-->
-<!--            {{ product_image.product.price }}.руб-->
-<!--        </div>-->
+        <div class="product-price-per-kilogram">
+            <h4>{{ product_image.product.price_per_kilogram }} руб/кг</h4>
+        </div>
         <div class="add-to-card-btn">
             <a class="f revealator-rotateleft " href="{% url 'product' product_image.product.id %}">
                 <button class="btn btn-success">

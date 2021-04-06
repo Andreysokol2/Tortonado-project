@@ -119,7 +119,15 @@ $(document).ready(function(){
                      dops = ''
                      $('#basket_total_nub').text(data.products_total_nub);
                      console.log("OK");
-                     swal("Отлично!", "Торт добавлен в корзину", "success");
+
+                     if (is_delete){
+                        $('[data-product_id='+product_id+']').remove();
+                        swal("Готово!", "Торт удалён из корзины", "error");
+                     }
+                     else{
+                        swal("Отлично!", "Торт добавлен в корзину", "success");
+                     }
+
 
                  },
                  error:function(){
