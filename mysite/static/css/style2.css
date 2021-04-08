@@ -4,15 +4,25 @@ body {
       background-image:url("https://i.postimg.cc/W1b8jvDW/1.png");
       padding: 0;
         margin: 0;
-        padding-top: 80px;
+        padding-top: 20px;
      /* background-repeat: repeat-y;*/
 
+ }
+ .btn-item1{
+    background-color: #b056bc;
+    border-color: #c966c5;
  }
  #basket_total_nub{
     position: absolute;
     font-size: 18px;
     right: 0%;
-    top: 6px;
+    top: 0px;
+    border: 1px solid;
+    /* border-radius: 10px; */
+    width: 20px;
+    height: 25px;
+    border-radius: 50%;
+    background: #f36a6a;
  }
    .social-icons li {
   display: inline-block;

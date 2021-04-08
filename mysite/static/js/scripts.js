@@ -119,9 +119,11 @@ $(document).ready(function(){
                      dops = ''
                      $('#basket_total_nub').text(data.products_total_nub);
                      console.log("OK");
-
                      if (is_delete){
                         $('[data-product_id='+product_id+']').remove();
+                        if (data.products_total_nub = '0'){
+                            $('.not-products-in-basket').text('У вас пока нет тортов в корзине');
+                        }
                         swal("Готово!", "Торт удалён из корзины", "error");
                      }
                      else{
@@ -204,5 +206,12 @@ $(document).ready(function(){
             basketUpdating(product_id = product_id, nub = nub, is_delete=true)
     })
 })
+window.onload = function () {
+    document.body.classList.add('loaded_hiding');
+    window.setTimeout(function () {
+      document.body.classList.add('loaded');
+      document.body.classList.remove('loaded_hiding');
+    }, 500);
+  }
 
 

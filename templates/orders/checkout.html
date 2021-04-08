@@ -5,7 +5,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h3 class="text-center category-name" >Товары в корзине</h3>
-                    <ul style="list-style:none;">
+                    {% if products_in_basket %}
+                        <ul style="list-style:none;">
                     {% for product_in_basket in products_in_basket %}
                         <li class="product-in-basket-item" data-product_id="{{ product_in_basket.id }}">
                             <div class="product-in-basket-img">
@@ -38,6 +39,10 @@
                         </li>
                     {% endfor %}
                 </ul>
+                    {% else %}
+                        <h1 class="text-center category-name not-products-in-basket" style="margin-bottom:300px;">У вас пока нет тортов в корзине</h1>
+                    {% endif %}
+                    <h1 class="text-center category-name not-products-in-basket"></h1>
                 </div>
             </div>
         </div>

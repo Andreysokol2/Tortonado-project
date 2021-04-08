@@ -149,7 +149,6 @@ padding: 10px;
     padding-top:15px;
     z-index: 1;
 }
-
 .category-name{
     color:white;
     font-size:30px;
@@ -176,7 +175,7 @@ padding: 10px;
     padding-left:20px;
 }
 .product-item{
-    height:600px;
+    height:620px;
     background-color:white;
     margin-top:20px;
 	position: relative;
